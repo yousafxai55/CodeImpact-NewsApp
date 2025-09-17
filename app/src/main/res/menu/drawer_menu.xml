@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <group>-->
+<!--        <item-->
+<!--            android:title="Home"-->
+<!--            android:id="@+id/home"-->
+<!--            android:icon="@drawable/baseline_home_24"/>-->
+<!--        <item-->
+<!--            android:title="My News"-->
+<!--            android:id="@+id/myNews"-->
+<!--            android:icon="@drawable/baseline_edit_24"/>-->
+<!--        <item-->
+<!--            android:title="Remove ads/Premium"-->
+<!--            android:id="@+id/removeAds"-->
+<!--            android:icon="@drawable/nav_ic_remove_ads"/>-->
+<!--        <item-->
+<!--            android:title="Manage Topics"-->
+<!--            android:id="@+id/manageTopics"-->
+<!--            android:icon="@drawable/nav_ic_manage_topics"/>-->
+<!--        <item-->
+<!--            android:title="Users Recommendation"-->
+<!--            android:id="@+id/userRecommendation"-->
+<!--            android:icon="@drawable/baseline_thumb_up_24"/>-->
+<!--        <item-->
+<!--            android:title="Bookmarks"-->
+<!--            android:id="@+id/bookmarks"/>-->
+<!--        <item-->
+<!--            android:title="History"-->
+<!--            android:id="@+id/history"-->
+<!--            android:icon="@drawable/baseline_history_24"/>-->
+<!--        <item-->
+<!--            android:title="Recent Notifications"-->
+<!--            android:id="@+id/recentNotifications"-->
+<!--            android:icon="@drawable/baseline_notifications_24"/>-->
+<!--        <item-->
+<!--            android:title="Browse by date"-->
+<!--            android:id="@+id/browseByDate"-->
+<!--            android:icon="@drawable/ic_calendar"/>-->
+<!--    </group>-->
+
+
+<!--    <item-->
+<!--        android:title="Communication">-->
+
+<!--        <menu>-->
+<!--                <group android:id="@+id/grouptwo"-->
+<!--                    android:menuCategory="container">-->
+<!--                    <item-->
+<!--                        android:title="Report a Problem"-->
+<!--                        android:id="@+id/reportProblem"-->
+<!--                        android:icon="@drawable/baseline_report_24"/>-->
+<!--                    <item-->
+<!--                        android:title="FAQs"-->
+<!--                        android:id="@+id/faqs"-->
+<!--                        android:icon="@drawable/nav_ic_faqs"/>-->
+<!--                    <item-->
+<!--                        android:title="Share this App"-->
+<!--                        android:id="@+id/shareApp"-->
+<!--                        android:icon="@drawable/baseline_share_24"/>-->
+<!--                    <item-->
+<!--                        android:title="Follow Instagram"-->
+<!--                        android:id="@+id/followInstagram"-->
+<!--                        android:icon="@drawable/nav_ic_instagram"/>-->
+<!--                    <item-->
+<!--                        android:title="Recommended Apps"-->
+<!--                        android:id="@+id/recommendedApps"/>-->
+<!--                    <item-->
+<!--                        android:title="About us"-->
+<!--                        android:id="@+id/aboutus"-->
+<!--                        android:icon="@drawable/baseline_info_24"/>-->
+
+<!--            </group>-->
+<!--        </menu>-->
+
+<!--    </item>-->
+</menu>

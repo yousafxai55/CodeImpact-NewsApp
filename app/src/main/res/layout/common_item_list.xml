@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:background="@color/uiBgColor"-->
+<!--    android:layout_marginTop="3dp">-->
+
+<!--&lt;!&ndash;    <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/tvTitle"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:paddingStart="5dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:paddingEnd="8dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:textColor="?android:textColorPrimary"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:textSize="16sp"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:layout_constraintBottom_toBottomOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:layout_constraintStart_toStartOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:layout_constraintTop_toTopOf="parent"&ndash;&gt;-->
+<!--&lt;!&ndash;        tools:text="this is the title of offline news t" />&ndash;&gt;-->
+<!--&lt;!&ndash; &ndash;&gt;-->
+
+
+
+<!--    <ImageView-->
+<!--        android:id="@+id/BookMark_newsIv"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="220dp"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/BookMark_newsSource"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:maxLines="1"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:textColor="?android:textColorPrimary"-->
+<!--        android:textSize="15sp"-->
+<!--        android:layout_marginStart="15dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/BookMark_newsIv"/>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/BookMark_pubDate"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:maxLines="1"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:textColor="?android:textColorSecondary"-->
+<!--        android:textSize="12sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/BookMark_newsSource"-->
+<!--        tools:text="Published: 2025-05-09" />-->
+<!--    <TextView-->
+<!--        android:id="@+id/BookMark_newsTitle"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        android:maxLines="3"-->
+<!--        android:textColor="?android:textColorPrimary"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/BookMark_pubDate"-->
+<!--        tools:text="This is is title of post. This is is title of post. This is is title of post." />-->
+
+<!--    <View-->
+<!--        android:id="@+id/divider"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:background="?android:attr/listDivider"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/BookMark_newsTitle" />-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    android:background="@color/card_color"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    app:strokeColor="@android:color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Image -->
+        <ImageView
+            android:id="@+id/BookMark_newsIv"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Source -->
+        <TextView
+            android:id="@+id/BookMark_newsSource"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/Text_color_gray"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@id/BookMark_pubDate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/BookMark_newsIv"
+            tools:text="BBC News" />
+
+        <!-- Date -->
+        <TextView
+            android:id="@+id/BookMark_pubDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="10dp"
+            android:textColor="@color/Text_color_gray"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/BookMark_newsSource"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Aug 23, 2025" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/BookMark_newsTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/text_title_color"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/clickArticleBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/BookMark_newsSource"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="This is a bookmark title..." />
+
+        <!-- Arrow Button -->
+        <ImageView
+            android:id="@+id/clickArticleBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/click_arrow"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/BookMark_pubDate"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

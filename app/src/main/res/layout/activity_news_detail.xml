@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/uiBgColor"
+    tools:context=".ui.Activity.NewsDetailActivity">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_news_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="" />
+
+    <!-- Main Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <!-- MaterialCardView for Rounded Image -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/imageRoundCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0.5dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- News Image -->
+            <ImageView
+                android:id="@+id/newsImageViewInDetail"
+                android:layout_width="match_parent"
+                android:layout_height="374dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            </com.google.android.material.card.MaterialCardView>
+            <!-- News Source -->
+            <TextView
+                android:id="@+id/newsSourceDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/imageRoundCard"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="News Source" />
+
+            <!-- News Title -->
+            <TextView
+                android:id="@+id/newsTitleInDetail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_title_color"
+                app:layout_constraintTop_toBottomOf="@id/newsSourceDetail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="News Title" />
+
+            <!-- News Content -->
+            <TextView
+                android:id="@+id/newsContentDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:textSize="16sp"
+                android:lineSpacingMultiplier="1.2"
+                android:textColor="@color/Text_color_gray"
+                app:layout_constraintTop_toBottomOf="@id/newsTitleInDetail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.." />
+
+            <!-- Read Full Article Button -->
+            <ImageButton
+                android:id="@+id/readFullArticleBtn"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/readmorebutton"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/newsContentDetail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:text="READ FULL ARTICLE"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:maxLines="4"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/newsContentDetail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Share and Bookmark Buttons -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/readFullArticleBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <!-- Share Button -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/detailShare"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:background="@color/Share_Book_btnBg">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/share_ic"
+                            app:tint="#2196F3" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Share"
+                            android:textColor="#2196F3"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Bookmark Button -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="2dp"
+                    app:strokeColor="#E0E0E0"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/detailBookmark"
+                        android:layout_width="match_parent"
+                        android:layout_height="55dp"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:background="@color/Share_Book_btnBg">
+
+                        <ImageView
+                            android:id="@+id/bookmarkIcon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_bookmark_unfilled"
+                            app:tint="#30B0FF" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Bookmark"
+                            android:textColor="#30B0FF"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+  </LinearLayout>

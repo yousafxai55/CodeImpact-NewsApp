@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+<!--    <item-->
+<!--        android:id="@+id/addTopic"-->
+<!--        app:showAsAction="always"-->
+<!--        android:title="@string/title_add_topic"-->
+<!--        android:icon="@drawable/menu_ic_add"-->
+<!--        />-->
+
+
+    <item
+        android:id="@+id/refresh"
+        app:showAsAction="ifRoom"
+        android:title="@string/title_refresh"
+        android:icon="@drawable/menu_ic_refresh"
+        />
+
+    <item
+        android:id="@+id/deleteAll"
+        app:showAsAction="never"
+        android:title="@string/delete_all"
+        />
+
+</menu>

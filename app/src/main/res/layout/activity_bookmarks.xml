@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:id="@+id/main"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:fitsSystemWindows="true"-->
+<!--    android:focusableInTouchMode="true"-->
+<!--    tools:context=".ui.Activity.BookmarksActivity">-->
+
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:id="@+id/appBar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:elevation="4dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
+
+<!--        <com.google.android.material.appbar.MaterialToolbar-->
+<!--            android:id="@+id/bookmarksToolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize"-->
+<!--            android:background="@color/color_main_appbar"-->
+<!--            app:layout_scrollFlags="scroll|enterAlways|snap"/>-->
+
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textNoBookmarks"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="No bookmarks available"-->
+<!--        android:textSize="18sp"-->
+<!--        android:textColor="@android:color/darker_gray"-->
+<!--        android:gravity="center"-->
+<!--        android:visibility="gone"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/appBar"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"/>-->
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/bookmarksRecyclerView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginTop="60dp"-->
+<!--        android:layout_marginBottom="60dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/appBar"-->
+<!--        tools:listitem="@layout/common_item_list"/>-->
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/light_grey"
+    tools:context=".ui.Activity.BookmarksActivity">
+
+    <!-- 🔎 Search bar + 3 dots -->
+    <LinearLayout
+        android:id="@+id/searchBarContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Fake Search -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/bookmark_searchBar"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="2dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_search"
+                    app:tint="@color/Share_Book_btnBg" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Search bookmarks..."
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- 3 dots -->
+        <ImageView
+            android:id="@+id/ivOverflow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:src="@drawable/icon_three_dott"
+            android:contentDescription="More options"
+            app:tint="@color/Share_Book_btnBg" />
+
+    </LinearLayout>
+
+    <!-- Empty State -->
+    <TextView
+        android:id="@+id/textNoBookmarks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No bookmarks available"
+        android:textSize="18sp"
+        android:textColor="@android:color/darker_gray"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/searchBarContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Bookmarks Recycler -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bookmarksRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/searchBarContainer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:listitem="@layout/common_item_list"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

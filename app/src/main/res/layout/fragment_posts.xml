@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/uiBgColor">
+
+    <!-- SwipeRefreshLayout should wrap RecyclerView -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <!-- ProgressBar for loading -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <!-- TextView for "Loading News" -->
+    <TextView
+        android:id="@+id/tvLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Loading News..."
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:visibility="gone" />
+
+
+    <!-- TextView for "No News Found" -->
+    <TextView
+        android:id="@+id/tvNoNewsFound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="No News Found"
+        android:textSize="18sp"
+        android:textColor="@color/tvNoNewsFound"
+        android:visibility="gone" />
+
+</FrameLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/uiBgColor"
+    tools:context=".ui.Activity.SearchActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 🔎 Search Bar -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/searchCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/searchBar_bg">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp">
+
+                <EditText
+                    android:id="@+id/searchEditText"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:hint="Search here..."
+                    android:layout_marginStart="10dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:imeOptions="actionSearch"
+                    android:inputType="text"
+                    android:textColor="@color/Text_color_gray"
+                    android:textColorHint="@android:color/darker_gray"/>
+
+                <ImageView
+                    android:id="@+id/ivSearch"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@android:drawable/ic_menu_search"
+                    android:contentDescription="Search"
+                    app:tint="@color/color_inactive_indicator" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- 🔄 Recent Searches + Results -->
+        <LinearLayout
+            android:id="@+id/linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/searchCard"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <TextView
+                android:id="@+id/tv_recent_searches"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Recent Searches"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/recentSearchesChipGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/search_Loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="32dp"
+                android:text="Loading..."
+                android:textSize="18sp"
+                android:visibility="gone"
+                android:textColor="@color/text_title_color"/>
+
+            <FrameLayout
+                android:id="@+id/search_fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="8dp"
+                 />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

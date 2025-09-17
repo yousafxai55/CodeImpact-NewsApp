@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--    <item-->
+<!--        android:title="Bookmark"-->
+<!--        android:id="@+id/bookmark"-->
+<!--        android:icon="@drawable/menu_ic_add_bookmark"-->
+<!--        app:showAsAction="always"/>-->
+
+<!--    <item-->
+<!--        android:title="Translate"-->
+<!--        android:id="@+id/translateNews"-->
+<!--        android:icon="@drawable/menu_ic_translate"-->
+<!--        app:showAsAction="always"/>-->
+
+<!--    <item-->
+<!--        android:title="Open in external browser"-->
+<!--        android:id="@+id/open_in_external_browser"-->
+<!--        android:icon="@drawable/menu_ic_open_in_browser"-->
+<!--        app:showAsAction="always"/>-->
+
+
+<!--    <item-->
+<!--        android:title="Change Font Size"-->
+<!--        android:id="@+id/changeFontSize"-->
+<!--        android:icon="@drawable/menu_ic_font_size"-->
+<!--        app:showAsAction="always"/>-->
+
+
+<!--    <item-->
+<!--        android:title="Share"-->
+<!--        android:id="@+id/share_complete_news"-->
+<!--        android:icon="@drawable/baseline_share_24"-->
+<!--        app:showAsAction="always"/>-->
+
+
+
+</menu>

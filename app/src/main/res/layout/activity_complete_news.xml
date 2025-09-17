@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.Activity.CompleteNewsActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/color_main_appbar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/toolbarCompleteNews"
+        app:title=""/>
+
+
+    <ProgressBar
+        android:id="@+id/complete_news_progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarCompleteNews"
+        android:paddingBottom="5dp"
+        android:progress="5"
+        android:theme="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        app:layout_collapseMode="pin" />
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/complete_news_progressBar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/webView"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

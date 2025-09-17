@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="light_grey">#D3D3D3</color>
+    <color name="darkgray">#747474</color>
+
+    <!--    ReadMore button color-->
+    <color name="Readbtn">#1877F2</color>
+    <color name="tvNoNewsFound">#747474</color>
+
+
+
+
+    <color name="uiBgColor">@color/white</color>
+    <color name="color_main_appbar">@color/white</color>
+    <color name="color_text">@color/black</color>
+    <color name="color_btn_text">@color/white</color>
+    <color name="color_inactive_indicator">@color/darkgray</color>
+
+    <!--    menu icon color -->
+    <color name="color_menu_icon">@color/black</color>
+    <color name="colorSurface">#121212</color>
+
+    <color name="Share_Book_btnBg">#E9E9E9</color>
+
+
+    <color name="searchBar_bg">#FFFFFF</color>
+
+
+    <color name="card_color">#FFFFFF</color>
+
+
+
+<!--    Naive Ad color -->
+    <color name="native_bg">#EEF8FF</color>
+
+
+    <color name="Text_color_gray">#B1B1B1</color>">
+
+    <color name="text_title_color">#454545</color>">
+
+
+
+
+
+
+</resources>

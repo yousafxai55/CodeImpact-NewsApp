@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="uiBgColor">@color/black</color>
+    <color name="color_main_appbar">#1F1F1F</color>
+    <color name="color_text">@color/white</color>
+    <color name="color_btn_text">@color/darkgray</color>
+
+    <color name="light_grey">#000000</color>
+
+<!--    menu icon color-->
+
+    <color name="color_menu_icon">@color/white</color>
+    <color name="colorSurface">@color/black</color>
+
+    <color name="Share_Book_btnBg">#262626</color>
+
+    <color name="searchBar_bg">#282828</color>
+
+
+    <color name="card_color">#262626</color>
+
+    <color name="text_title_color">#FFFFFF</color>">
+
+
+
+</resources>

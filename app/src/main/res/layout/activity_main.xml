@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_grey"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.Activity.MainActivity">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- 🔎 Search bar + 3 dots container -->
+            <LinearLayout
+                android:id="@+id/searchBarContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_margin="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <!-- Fake Search Bar (like Facebook / WhatsApp) -->
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/searchBar"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="2dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="16dp">
+
+                        <!-- Text (left) -->
+                        <TextView
+                            android:id="@+id/searchText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Search here..."
+                            android:textColor="@android:color/darker_gray"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <!-- Icon (right) -->
+                        <ImageView
+                            android:id="@+id/searchIcon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@android:drawable/ic_menu_search"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <!--                <com.google.android.material.card.MaterialCardView-->
+<!--                    android:id="@+id/searchBar"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    app:cardCornerRadius="24dp"-->
+<!--                    app:cardElevation="2dp"-->
+<!--                    android:clickable="true"-->
+<!--                    android:focusable="true">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:gravity="center_vertical"-->
+<!--                        android:paddingHorizontal="16dp">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="24dp"-->
+<!--                            android:layout_height="24dp"-->
+<!--                            android:src="@android:drawable/ic_menu_search"-->
+<!--                            app:tint="@color/Share_Book_btnBg" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Search here..."-->
+<!--                            android:textColor="@android:color/darker_gray"-->
+<!--                            android:layout_marginStart="8dp" />-->
+
+<!--                    </LinearLayout>-->
+<!--                </com.google.android.material.card.MaterialCardView>-->
+
+                <!-- ⋮ 3 dots button -->
+                <ImageView
+                    android:id="@+id/ivOverflow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:src="@drawable/icon_three_dott"
+                    android:contentDescription="More options"
+                    android:backgroundTint="@color/color_btn_text"
+                     />
+
+            </LinearLayout>
+
+
+            <!--  Loading Text -->
+            <TextView
+                android:id="@+id/tvLoading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Loading..."
+                android:textSize="30dp"
+                android:textColor="@color/darkgray"
+                android:visibility="visible"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/searchBarContainer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- RecyclerView content -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:clipToPadding="false"
+                android:paddingTop="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/searchBarContainer"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
+

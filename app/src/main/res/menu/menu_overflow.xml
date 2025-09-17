@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<!--    <item-->
+<!--        android:title="Search"-->
+<!--        android:id="@+id/main_menu_action_search"-->
+<!--        android:icon="@drawable/baseline_search_24"-->
+<!--        app:showAsAction="always"/>-->
+
+<!--    <item-->
+<!--        android:title="Recent Notifications"-->
+<!--        android:id="@+id/recentNotifications"-->
+<!--        android:icon="@drawable/baseline_notifications_24"-->
+<!--        app:showAsAction="always"/>-->
+
+<!--    <item-->
+<!--        android:title="Download News"-->
+<!--        android:id="@+id/downloadNews"-->
+<!--        android:icon="@drawable/baseline_download_24"-->
+<!--        app:showAsAction="always"/>-->
+
+<!--    <item-->
+<!--        android:title="Change List View"-->
+<!--        android:id="@+id/changeListView"-->
+<!--        android:icon="@drawable/baseline_format_list_bulleted_24"-->
+<!--        app:showAsAction="always"/>-->
+
+<!--    <item-->
+<!--        android:title="Upgrade to Premium"-->
+<!--        android:id="@+id/upgradeToPremium"-->
+<!--         android:checkable="false"/>-->
+
+<!--    <item-->
+<!--        android:title="Settings"-->
+<!--        android:id="@+id/settings"-->
+<!--        app:showAsAction="never"-->
+<!--        android:checkable="false"/>-->
+
+    <item
+        android:title="Search News"
+        android:id="@+id/SaveSearchNews"
+        app:showAsAction="never"
+        android:checkable="false"/>
+
+    <item
+        android:id="@+id/main_bookmarks"
+        app:showAsAction="never"
+        android:checkable="false"
+        android:title="Book Mark" />
+
+    <item
+        android:title="Exit"
+        android:id="@+id/exit"
+        app:showAsAction="never"
+        android:checkable="false"/>
+
+
+</menu>

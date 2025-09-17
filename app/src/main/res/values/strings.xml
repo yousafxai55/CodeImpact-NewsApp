@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">News App </string>
+
+    <string name="closeDrawer">Close Drawer</string>
+    <string name="openDrawer">Open Drawer</string>
+
+
+    <!--    BookMarks String-->
+
+    <string name="search_bookmarks">Search bookmarks</string>
+    <string name="clear_bookmarks">Clear all bookmarks</string>
+    <string name="search">Search</string>
+    <string name="delete_all">Delete all</string>
+
+
+    <!--    save Search String-->
+
+    <string name="title_add_topic">Add topic</string>
+    <string name="title_refresh">Refresh</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--no internet dialog strings -->
+    <string name="dialog_title_no_internet">No Network Connection</string>
+    <string name="dialog_message_no_internet">Seems like you\'re not connected to internet or your internet is not working</string>
+
+
+    <string name="lorem_ipsum_dummy_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only the centuries, but also the leap into electronic typesetting. Ignoring classical workproofs, it was popularized in the \'1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+        desktop publishing software like Atlas PageMaker including versions of Lorem Ipsum.</string>
+
+    <string name="back_button">Back</string>
+
+</resources>
