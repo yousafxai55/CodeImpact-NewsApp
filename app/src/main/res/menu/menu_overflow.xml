@@ -50,6 +50,12 @@
         android:title="Book Mark" />
 
     <item
+        android:id="@+id/privacy_policy"
+        app:showAsAction="never"
+        android:checkable="false"
+        android:title="Privacy Policy" />
+
+    <item
         android:title="Exit"
         android:id="@+id/exit"
         app:showAsAction="never"

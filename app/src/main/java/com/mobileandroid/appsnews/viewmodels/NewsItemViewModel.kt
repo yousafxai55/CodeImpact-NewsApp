@@ -29,3 +29,27 @@ class NewsItemViewModel(private val repository: NewsRepository) : ViewModel() {
         }
     }
 }
+
+
+
+//class NewsItemViewModel(private val repository: NewsRepository) : ViewModel() {
+//
+//    val newsLiveData: LiveData<ArrayList<Map<String, String>>> = repository.responseLiveData
+//
+//    init {
+//        // Start fetching feeds safely
+//        viewModelScope.launch {
+//            repository.getResponsesConcurrently()
+//        }
+//    }
+//
+//    fun loadNextBatch(onComplete: () -> Unit = {}) {
+//        viewModelScope.launch {
+//            repository.getResponsesConcurrently()
+//            withContext(Dispatchers.Main) {
+//                onComplete()
+//            }
+//        }
+//    }
+//
+//}

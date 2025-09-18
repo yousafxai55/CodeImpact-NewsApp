@@ -1,19 +1,26 @@
 package com.mobileandroid.appsnews.ui.Activity
 
 import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
+import android.webkit.WebView
 import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.webkit.WebSettingsCompat
+import androidx.webkit.WebViewFeature
+import com.google.android.material.color.MaterialColors
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationView
 import com.mobileandroid.appsnews.R
 import com.mobileandroid.appsnews.api.FetchResponse
@@ -107,6 +114,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             startActivity(Intent(this, SavedSearchActivity::class.java))
                             true
                         }
+
+                        R.id.privacy_policy -> {
+                            showPrivacyDialog()
+                            true
+                        }
+
                         R.id.exit -> {
                             finishAffinity()
                             true
@@ -122,6 +135,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val intent = Intent(this, SearchActivity::class.java)
                 startActivity(intent)
             }
+
+
 
 
 
@@ -149,6 +164,39 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             //optionsMenuSelected()
 
         }
+
+    private fun showPrivacyDialog() {
+        val webView = WebView(this).apply {
+            settings.javaScriptEnabled = false
+
+            // Force WebView to respect system dark mode if available
+            if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK)) {
+                WebSettingsCompat.setForceDark(settings, WebSettingsCompat.FORCE_DARK_AUTO)
+            }
+
+            // (Optional) make the WebView itself match dialog surface
+            // This is safe because HTML already handles dark via CSS above
+            setBackgroundColor(
+                MaterialColors.getColor(this, com.google.android.material.R.attr.colorSurface)
+            )
+
+            loadUrl("file:///android_asset/privacy_policy.html")
+        }
+
+        val dialog = MaterialAlertDialogBuilder(this)
+            .setTitle(R.string.title_privacy_policy)
+            .setView(webView)
+            .setPositiveButton("Close", null)
+            .create()
+
+        dialog.setOnShowListener {
+            val closeBtn = dialog.getButton(DialogInterface.BUTTON_POSITIVE)
+            // light gray text for the Close button
+            closeBtn.setTextColor(ContextCompat.getColor(this, R.color.text_title_color))
+        }
+
+        dialog.show()
+    }
 
 
     private fun showNoInternetDialog() {
