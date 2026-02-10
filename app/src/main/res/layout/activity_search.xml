@@ -55,6 +55,16 @@
                     android:contentDescription="Search"
                     app:tint="@color/color_inactive_indicator" />
 
+                <!-- Isko apne searchCard ke LinearLayout ke andar dalen (EditText ke baad) -->
+                <ImageView
+                    android:id="@+id/ivVoiceSearch"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_mic"
+                    app:tint="@color/Text_color_gray"
+                    android:contentDescription="Voice Search" />
+
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>

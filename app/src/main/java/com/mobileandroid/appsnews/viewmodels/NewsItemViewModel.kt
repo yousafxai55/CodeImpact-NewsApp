@@ -13,10 +13,28 @@ class NewsItemViewModel(private val repository: NewsRepository) : ViewModel() {
 
     val newsLiveData: LiveData<ArrayList<Map<String, String>>> = repository.responseLiveData
 
+    // 1. Voice Result ke liye LiveData
+    private val _voiceResult = androidx.lifecycle.MutableLiveData<String?>()
+    val voiceResult: androidx.lifecycle.LiveData<String?> = _voiceResult
+
+    // 2. Loading state (Optional: taake processing ke waqt user ko pata chale)
+    private val _isProcessing = androidx.lifecycle.MutableLiveData<Boolean>()
+    val isProcessing: androidx.lifecycle.LiveData<Boolean> = _isProcessing
+
     init {
         // Start fetching feeds safely
         viewModelScope.launch {
             repository.getResponsesConcurrently()
+        }
+    }
+
+    /** 🎙️ Voice processing trigger karne ka function */
+    fun processVoiceSearch(audioFile: java.io.File) {
+        _isProcessing.value = true
+        viewModelScope.launch(Dispatchers.IO) {
+            val textResult = repository.getSpeechToText(audioFile)
+            _voiceResult.postValue(textResult)
+            _isProcessing.postValue(false)
         }
     }
 
@@ -30,26 +48,3 @@ class NewsItemViewModel(private val repository: NewsRepository) : ViewModel() {
     }
 }
 
-
-
-//class NewsItemViewModel(private val repository: NewsRepository) : ViewModel() {
-//
-//    val newsLiveData: LiveData<ArrayList<Map<String, String>>> = repository.responseLiveData
-//
-//    init {
-//        // Start fetching feeds safely
-//        viewModelScope.launch {
-//            repository.getResponsesConcurrently()
-//        }
-//    }
-//
-//    fun loadNextBatch(onComplete: () -> Unit = {}) {
-//        viewModelScope.launch {
-//            repository.getResponsesConcurrently()
-//            withContext(Dispatchers.Main) {
-//                onComplete()
-//            }
-//        }
-//    }
-//
-//}
